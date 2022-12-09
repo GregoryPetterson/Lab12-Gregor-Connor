@@ -35,6 +35,14 @@ public class BreakString {
         //BreakString str = new BreakString(len, breakPoints);
     }
 
+    /**
+     * This is our algorithm without memoization. breakStrings takes a string length, number of breaks, and list of breaks
+     * and determines the best possible cost for breaking it into the specified breaks.
+     * @param n n is the length of the theoretical string
+     * @param numberofBreaks numberOfBreaks is the number of breaks to consider in the list of breaks
+     * @param listOfBreaks listOfBreaks is a List<Integer> of indicies we want to cut a string at
+     * @return Returns the best value possible for cutting a string of length n at the specified break points. (As an integer).
+     */
     public static int breakStrings(int n, int numberofBreaks, List<Integer> listOfBreaks)
     {
         if(n <= 0 || numberofBreaks == 0) return 0;
@@ -60,6 +68,19 @@ public class BreakString {
         return q;
     }
 
+    /**
+     * This is our algorithm with a Memoization implementation. breakStringsMemotakes a string length, number of breaks, and list of breaks
+     * and determines the best possible cost for breaking it into the specified breaks. This method checks to see if a subproblem has been solved before
+     * and if it has, it references the classes hashTable to find the value. If it doesn't find a value, then it does all the work for the subproblem and
+     * stores the best value in the Hashtable, then it returns the answer.
+     * 
+     * Current Issue: 
+     * This is eventually supposed to output the solution for finding the best value (order to make the breaks).
+     * @param n N is the length of the theoretical String
+     * @param numberofBreaks numberOfBreaks is the amount of breaks in listOfBreaks
+     * @param listOfBreaks listOfBreaks is a List<Integer> of indicies we want to cut a string at
+     * @return Returns the best value possible for cutting a string of length n at the specified break points. (As an integer).
+     */
     public int breakStringsMemo(int n, int numberofBreaks, List<Integer> listOfBreaks)
     {
         if(n <= 0 || numberofBreaks == 0) return 0;
