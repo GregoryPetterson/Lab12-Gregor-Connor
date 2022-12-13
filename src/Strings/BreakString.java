@@ -2,7 +2,6 @@ package Strings;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.List;
 
@@ -23,16 +22,11 @@ public class BreakString {
         breaks.add(20); 
         breaks.add(26); 
         breaks.add(28); 
-        System.out.println(potato.breakStringsMemo(len, numberOfBreaks, breaks));
-        System.out.println(potato.memo);
+        // System.out.println(potato.breakStringsMemo(len, numberOfBreaks, breaks));
+        // System.out.println(potato.memo);
 
         int[] p = {0, 1, 5, 8, 9, 12};
-
-        
-        //System.out.println(breakRod(p, 5));
-
-        
-        //BreakString str = new BreakString(len, breakPoints);
+        System.out.println(breakRod(p, 5));
     }
 
     /**
